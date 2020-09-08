@@ -1,0 +1,27 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "name": "logging",
+      "type": "cosmosDB",
+      "databaseName": "SampleDB",
+      "collectionName": "loggingTest",
+      "createIfNotExists": false,
+      "connectionStringSetting": "loggingDbConStr",
+      "direction": "out"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
