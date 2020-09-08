@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "name": "logging",
+      "type": "cosmosDB",
+      "databaseName": "SampleDB",
+      "collectionName": "loggingTest",
+      "createIfNotExists": false,
+      "connectionStringSetting": "loggingDbConStr",
+      "direction": "in",
+      "sqlQuery": "SELECT * FROM c where c.date > {startDate}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    }
+  ]
+}
